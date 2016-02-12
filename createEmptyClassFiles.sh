@@ -3,29 +3,31 @@
 #Tony Phan
 #861102801 tphana022@ucr.edu
 
-touch MyClass.hh
-touch MyClass.cc
 
-cat Tony_861102801.txt > MyClass.hh
-cat Tony_861102801.txt > MyClass.cc
 
-echo "#ifndef MyClass_hh
-#define MyClass_hh
+touch $1.hh
+touch $1.cc
 
-class MyClass
+cat Tony_861102801.txt > $1.hh
+cat Tony_861102801.txt > $1.cc
+
+echo "#ifndef $1_hh
+#define $1_hh
+
+class $1
 {
 	public:
-	MyClass();
-	~MyClass();
+	$1();
+	~$1();
 
 	private:
 };
-#endif" >> MyClass.hh
+#endif" >> $1.hh
 
-echo "include "./MyCLass.hh" 
+echo "include "$1.hh" 
 
-MyClass::MyClass()
+$1::$1()
 {}
 
-MyClass::~MyClass()
-{}" >> MyClass.cc
+$1::~$1()
+{}" >> $1.cc
